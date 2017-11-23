@@ -22,3 +22,4 @@
 
 "use strict";
 
+const initialize = require("./lib/initialize").initialize;
