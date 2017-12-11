@@ -29,6 +29,7 @@
         "url": "https://github.com/dpjanes/iotdb-platform"
     }, 
     "scripts": {
+        "cover": "istanbul cover _mocha -- --recursive",
         "test": "grunt"
     }, 
     "version": "1.0.1"

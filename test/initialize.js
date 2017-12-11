@@ -26,11 +26,13 @@ const _ = require("iotdb-helpers");
 const fs = require("iotdb-fs");
 
 const assert = require("assert"); 
-const os = require("os"); 
+const path = require("path"); 
 
 const platform = require("..")
 
 describe("initialize", function() {
+    const os_release = platform.initialize.shims.os_release;
+
     it("works", function(done) {
         _.promise.make()
             .then(platform.initialize)
@@ -42,15 +44,29 @@ describe("initialize", function() {
             }))
             .catch(done)
     })
-})
+    describe("data/os-release/raspberrypi-stretch", function() {
+        before(function() {
+            platform.initialize.shims.os_release = path.join(__dirname, "data/os-release/raspberrypi-stretch");
+        })
+        after(function() {
+            platform.initialize.shims.os_release = os_release;
+        })
 
+        it("works", function(done) {
+            _.promise.make()
+                .then(platform.initialize)
+                .then(_.promise.make(sd => {
+                    assert.ok(sd.platform)
+                    assert.ok(sd.platform.hostname)
+                    assert.ok(sd.platform.mac)
 
-/*
-// exports.shims.os_release = "os-release";
-_.promise.make()
-    .then(initialize)
-    .then(_.promise.log(null, "platform"))
-    .catch(x => {
-        console.log(x)
+                    assert.ok(sd.platform.is_raspbian_stretch)
+                    assert.ok(sd.platform.is_raspbian)
+                    assert.ok(sd.platform.is_debian)
+
+                    done()
+                }))
+                .catch(done)
+        })
     })
-    */
+})
