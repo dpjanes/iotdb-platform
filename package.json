@@ -4,15 +4,15 @@
         "url": "https://github.com/dpjanes/iotdb-platform/issues"
     }, 
     "dependencies": {
-        "iotdb-fs": "~1.0.24", 
-        "iotdb-helpers": "~3.1.20"
+        "iotdb-fs": "~1.0.28", 
+        "iotdb-helpers": "~3.2.2"
     }, 
     "description": "POP platform description", 
     "devDependencies": {
         "grunt": "~1.0.1", 
         "grunt-contrib-jshint": "~1.1.0", 
         "grunt-contrib-nodeunit": "~1.0.0", 
-        "grunt-contrib-uglify": "~3.2.1", 
+        "grunt-contrib-uglify": "~3.3.0", 
         "grunt-contrib-watch": "~1.0.0", 
         "grunt-jsbeautifier": "~0.2.13", 
         "jshint-stylish": "~2.2.1", 
@@ -32,5 +32,5 @@
         "cover": "istanbul cover _mocha -- --recursive", 
         "test": "grunt"
     }, 
-    "version": "1.0.2"
+    "version": "1.0.3"
 }
