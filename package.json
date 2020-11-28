@@ -4,8 +4,8 @@
         "url": "https://github.com/dpjanes/iotdb-platform/issues"
     }, 
     "dependencies": {
-        "iotdb-fs": "~2.0.1", 
-        "iotdb-helpers": "~3.4.3"
+        "iotdb-fs": "~2.1.2", 
+        "iotdb-helpers": "~3.5.2"
     }, 
     "description": "POP platform description", 
     "homepage": "https://github.com/dpjanes/node-iotdb", 
@@ -21,5 +21,5 @@
         "cover": "istanbul cover _mocha -- --recursive", 
         "test": "grunt"
     }, 
-    "version": "1.0.4"
+    "version": "1.0.5"
 }
